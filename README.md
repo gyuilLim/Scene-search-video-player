@@ -1,6 +1,6 @@
 # Scene search video player
 
-## Porject Overview
+This project was created based on [https://github.com/gyuilLim/youtube-scene-search-with-text]
 
 ## Key Features
 
