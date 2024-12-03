@@ -34,21 +34,18 @@ Change directory '/Scene_search_video_player' and run this command.
 $ flask run
 ```
 
-
-To be added for detail about experiment
-
 ## Result
 
-This is initial screen of video player
+### 1. This is initial screen of video player
 
 ![Screenshot from 2024-12-03 12-55-26](https://github.com/user-attachments/assets/ee3e213a-81a6-4c58-a57b-ed170b9e64fa)
 
 
-If you drag&drop your video and search the scene you want, then
+### 2. If you drag&drop your video and search the scene you want, then
 
 ![Screenshot from 2024-12-03 13-08-49](https://github.com/user-attachments/assets/285aca72-7cff-44c3-8d95-171dbbcdde1a)
 
-Three scenes similar to your text will be provided.
+### 3. Three scenes similar to your text will be provided.
 
 
 
