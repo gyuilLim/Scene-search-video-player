@@ -50,15 +50,6 @@ def check_text_set():
     return jsonify({'exists': file_exists})
 
 
-# @app.route('/inference', methods=['POST'])
-# def inference():
-
-#     task_id = str(time.time())  # 고유한 작업 ID 생성
-#     processing_status[task_id] = "시작됨"
-#     thread = Thread(target=video_texting, args=('./static/video.mp4', task_id))
-#     thread.start()
-#     return jsonify({'task_id': task_id})
-
 @app.route('/inference', methods=['POST'])
 def inference():
     # 여기에 저장된 비디오 파일 경로 사용
@@ -77,9 +68,6 @@ def status(task_id):
     status = processing_status.get(task_id, "작업 ID가 유효하지 않습니다.")
     return jsonify({'status': status})
 
-# def inference() :
-#     video_texting('./static/video.mp4', 0)
-#     return jsonify({'result': True})
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -94,13 +82,6 @@ def search():
 
     return jsonify({'result': str(time)})
 
-# @app.route('/get_frame')
-# def get_frame():
-#     time = request.args.get('time', '')
-#     index = request.args.get('index', '')
-#     video_frame_url = f'./static/frames/{index}.jpg' 
-#     save_frame('./static/video.mp4', time, video_frame_url)
-#     return jsonify({'frame_url': video_frame_url})
 
 # 프레임을 추출하는 라우트
 @app.route('/get_frame', methods=['GET'])

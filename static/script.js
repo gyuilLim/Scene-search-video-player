@@ -244,45 +244,6 @@ function checkStatus(taskId) {
   }, 10000); // 3초마다 상태 확인
 }
 
-// // Handle search
-// document.getElementById('searchBar').addEventListener('keyup', function(event) {
-//   if (event.key === 'Enter') {
-//     const searchInput = document.getElementById('searchBar').querySelector('input').value;
-//     fetch('/search', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({ search_text: searchInput })
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//       videoFramesDiv.innerHTML = '';
-//       JSON.parse(data.result).forEach((time, index) => {
-//         fetch(`/get_frame?time=${time}&index=${index}`)
-//           .then(response => response.json())
-//           .then(frameData => {
-//             const frameImg = document.createElement('img');
-//             frameImg.src = `${frameData.frame_url}?${new Date().getTime()}`; // Prevent caching
-//             frameImg.style.width = '30%';
-//             frameImg.alt = `Frame at Time ${index + 1}`;
-//             frameImg.addEventListener('click', () => {
-//               video.currentTime = time;
-//               searchBar.style.display = 'none';
-//             });
-//             videoFramesDiv.appendChild(frameImg);
-//           })
-//           .catch(error => {
-//             console.error('Error fetching frame:', error);
-//           });
-//       });
-//       document.getElementById('searchBar').querySelector('input').value = '';
-//     })
-//     .catch(error => {
-//       console.error('Error:', error);
-//     });
-//   }
-// });
 
 // Handle search
 document.getElementById('searchBar').addEventListener('keyup', function(event) {
@@ -336,25 +297,6 @@ dropArea.addEventListener('dragleave', () => {
   dropArea.style.backgroundColor = '#ffffff'; // Reset background color
 });
 
-// dropArea.addEventListener('drop', (event) => {
-//   event.preventDefault();
-//   dropArea.style.backgroundColor = '#ffffff';
-//   dropArea.style.display = "none";
-//   const files = event.dataTransfer.files;
-
-//   if (files.length > 0) {
-//     const videoFile = files[0];
-//     if (videoFile.type.startsWith('video/')) {
-//       const videoURL = URL.createObjectURL(videoFile);
-//       video.src = videoURL;
-//       video.load();
-//       video.play();
-//       showControls();
-//     } else {
-//       alert('Please drop a valid video file.');
-//     }
-//   }
-// });
 
 dropArea.addEventListener('drop', (event) => {
   event.preventDefault();
